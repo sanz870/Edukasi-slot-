@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Demo Edukasi Slot Modern</title>
+
+  <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+
+  <!-- BACKGROUND -->
+  <div class="bg-glow glow1"></div>
+  <div class="bg-glow glow2"></div>
+
+  <div class="container">
+
+    <!-- HEADER -->
+    <header class="hero">
+
+      <h1>
+        🎰 DEMO SLOT MODERN
+      </h1>
+
+      <p>
+        Simulasi probabilitas, house edge,
+        efek psikologis permainan,
+        dan edukasi tentang risiko kecanduan judi.
+      </p>
+
+      <div class="hero-badges">
+
+        <span>⚡ Neon Effect</span>
+        <span>🎮 Multi Games</span>
+        <span>📘 Edukasi</span>
+        <span>📱 Mobile Friendly</span>
+
+      </div>
+
+    </header>
+
+    <!-- TOP PANEL -->
+    <section class="top-grid">
+
+      <!-- SALDO -->
+      <div class="panel balance-panel">
+
+        <h2>💰 Saldo</h2>
+
+        <div class="balance-text">
+
+          Rp <span id="balance">100000</span>
+
+        </div>
+
+        <div class="warning-box">
+
+          Semakin lama bermain,
+          kemungkinan kehilangan uang
+          semakin besar.
+
+        </div>
+
+      </div>
+
+      <!-- PENGATURAN -->
+      <div class="panel">
+
+        <h2>⚙ Pengaturan</h2>
+
+        <div class="input-group">
+
+          <label>Peluang Menang (%)</label>
+
+          <input
+          type="number"
+          id="chanceInput"
+          value="20">
+
+        </div>
+
+        <div class="input-group">
+
+          <label>Taruhan</label>
+
+          <input
+          type="number"
+          id="betInput"
+          value="5000">
+
+        </div>
+
+        <div class="input-group">
+
+          <label>Hadiah</label>
+
+          <input
+          type="number"
+          id="rewardInput"
+          value="15000">
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- SLOT -->
+    <section class="slot-wrapper">
+
+      <div class="slot-header">
+
+        <h2>🎯 Slot Machine</h2>
+
+        <div class="live-status">
+          ● ONLINE
+        </div>
+
+      </div>
+
+      <div class="slot-machine">
+
+        <div class="reel" id="r1">🍒</div>
+        <div class="reel" id="r2">🍋</div>
+        <div class="reel" id="r3">⭐</div>
+        <div class="reel" id="r4">💎</div>
+        <div class="reel" id="r5">7️⃣</div>
+
+      </div>
+
+      <button id="spinBtn">
+
+        🎰 SPIN SEKARANG
+
+      </button>
+
+      <div class="result" id="resultText">
+
+        Tekan tombol SPIN untuk mulai
+
+      </div>
+
+    </section>
+
+    <!-- STAT -->
+    <section class="stats-grid">
+
+      <div class="stat-card">
+
+        <h3>Total Main</h3>
+
+        <p id="totalSpin">0</p>
+
+      </div>
+
+      <div class="stat-card">
+
+        <h3>Total Menang</h3>
+
+        <p id="totalWin">0</p>
+
+      </div>
+
+      <div class="stat-card">
+
+        <h3>Total Kalah</h3>
+
+        <p id="totalLose">0</p>
+
+      </div>
+
+      <div class="stat-card">
+
+        <h3>Total Kerugian</h3>
+
+        <p id="totalLossMoney">0</p>
+
+      </div>
+
+    </section>
+
+    <!-- GAMES -->
+    <section class="games-section">
+
+      <div class="section-title">
+
+        <h2>🎮 Mini Games Simulasi</h2>
+
+        <p>
+          Simulasi tambahan untuk memperlihatkan
+          efek probabilitas dan psikologi permainan.
+        </p>
+
+      </div>
+
+      <div class="games-grid">
+
+        <!-- GAME 1 -->
+        <div class="game-card">
+
+          <div class="game-icon">🎲</div>
+
+          <h3>Tebak Angka</h3>
+
+          <p>
+            Menebak angka acak.
+            Peluang menang sangat kecil.
+          </p>
+
+          <button onclick="guessGame()">
+            Main
+          </button>
+
+        </div>
+
+        <!-- GAME 2 -->
+        <div class="game-card">
+
+          <div class="game-icon">🪙</div>
+
+          <h3>Coin Flip</h3>
+
+          <p>
+            Peluang 50:50 tetap bisa
+            membuat kerugian panjang.
+          </p>
+
+          <button onclick="coinFlip()">
+            Lempar
+          </button>
+
+        </div>
+
+        <!-- GAME 3 -->
+        <div class="game-card">
+
+          <div class="game-icon">🎯</div>
+
+          <h3>Lucky Spin</h3>
+
+          <p>
+            Simulasi keberuntungan cepat
+            yang membuat pemain ketagihan.
+          </p>
+
+          <button onclick="luckySpin()">
+            Putar
+          </button>
+
+        </div>
+
+        <!-- GAME 4 -->
+        <div class="game-card">
+
+          <div class="game-icon">💣</div>
+
+          <h3>Bomb Box</h3>
+
+          <p>
+            Pilih kotak aman.
+            Salah pilih langsung kalah.
+          </p>
+
+          <button onclick="bombGame()">
+            Buka
+          </button>
+
+        </div>
+
+        <!-- GAME 5 -->
+        <div class="game-card">
+
+          <div class="game-icon">📉</div>
+
+          <h3>Efek Kecanduan</h3>
+
+          <p>
+            Simulasi pola pemain
+            mengejar kekalahan.
+          </p>
+
+          <button onclick="addictionDemo()">
+            Lihat
+          </button>
+
+        </div>
+
+        <!-- GAME 6 -->
+        <div class="game-card">
+
+          <div class="game-icon">🔥</div>
+
+          <h3>Jackpot Rush</h3>
+
+          <p>
+            Jackpot terlihat menarik,
+            tapi peluangnya sangat kecil.
+          </p>
+
+          <button onclick="jackpotRush()">
+            Main
+          </button>
+
+        </div>
+
+      </div>
+
+      <div class="mini-result" id="miniResult">
+
+        Belum ada simulasi dimainkan.
+
+      </div>
+
+    </section>
+
+    <!-- LEADERBOARD -->
+    <section class="leaderboard">
+
+      <h2>🏆 Simulasi Statistik Pemain</h2>
+
+      <table>
+
+        <tr>
+          <th>Nama</th>
+          <th>Main</th>
+          <th>Menang</th>
+          <th>Kalah</th>
+        </tr>
+
+        <tr>
+          <td>Player_01</td>
+          <td>124</td>
+          <td>20</td>
+          <td>104</td>
+        </tr>
+
+        <tr>
+          <td>Player_02</td>
+          <td>230</td>
+          <td>31</td>
+          <td>199</td>
+        </tr>
+
+        <tr>
+          <td>Player_03</td>
+          <td>412</td>
+          <td>52</td>
+          <td>360</td>
+        </tr>
+
+      </table>
+
+    </section>
+
+    <!-- EDUCATION -->
+    <section class="education-section">
+
+      <div class="section-title">
+
+        <h2>📘 Edukasi Tentang Judi</h2>
+
+        <p>
+          Mengapa banyak orang sulit berhenti bermain.
+        </p>
+
+      </div>
+
+      <!-- BOX -->
+      <div class="edu-card">
+
+        <h3>⚠ House Edge</h3>
+
+        <p>
+          Slot dirancang agar bandar memiliki keuntungan statistik.
+          Pemain mungkin menang sesekali,
+          tetapi dalam jangka panjang sistem tetap unggul.
+        </p>
+
+      </div>
+
+      <div class="edu-card">
+
+        <h3>🧠 Efek Psikologis</h3>
+
+        <ul>
+
+          <li>Animasi dan suara memicu dopamin.</li>
+
+          <li>Kemenangan kecil membuat pemain ingin terus bermain.</li>
+
+          <li>Kekalahan sering dikejar dengan taruhan lebih besar.</li>
+
+          <li>Pemain sering lupa total uang yang sudah habis.</li>
+
+        </ul>
+
+      </div>
+
+      <div class="edu-card">
+
+        <h3>💸 Dampak Kehidupan</h3>
+
+        <ul>
+
+          <li>Tabungan habis perlahan.</li>
+
+          <li>Hutang meningkat.</li>
+
+          <li>Hubungan keluarga rusak.</li>
+
+          <li>Produktivitas menurun.</li>
+
+          <li>Stres dan kecemasan meningkat.</li>
+
+        </ul>
+
+      </div>
+
+      <div class="edu-card">
+
+        <h3>✅ Hal Yang Lebih Baik</h3>
+
+        <ul>
+
+          <li>Belajar editing.</li>
+
+          <li>Belajar coding.</li>
+
+          <li>Membangun bisnis kecil.</li>
+
+          <li>Menabung dan investasi.</li>
+
+          <li>Fokus masa depan.</li>
+
+        </ul>
+
+      </div>
+
+      <div class="big-quote">
+
+        “Keberuntungan instan terlihat menarik,
+        tetapi skill dan kerja nyata
+        jauh lebih berharga untuk masa depan.”
+
+      </div>
+
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+
+      <p>
+        © 2026 Demo Edukasi Slot —
+        Dibuat untuk simulasi probabilitas dan edukasi.
+      </p>
+
+    </footer>
+
+  </div>
+
+  <script src="script.js"></script>
+
+</body>
+</html>
